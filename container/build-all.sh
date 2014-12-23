@@ -2,7 +2,9 @@
 
 (cd apt-cacher-ng && ./build.sh)
 (cd ubuntu && ./build.sh)
+(cd elasticsearch && ./build.sh)
 (cd postgresql && ./build.sh)
+(cd logstash && ./build.sh)
 (cd mongodb && ./build.sh)
 (cd rabbitmq && ./build.sh)
 (cd jenkins && ./build.sh)

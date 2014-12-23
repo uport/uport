@@ -16,4 +16,6 @@ RUN echo "[{rabbit, [{loopback_users, []}]}]." > /etc/rabbitmq/rabbitmq.config
 
 EXPOSE 5672 15672 4369
 
+ADD Dockerfile .
+
 CMD /usr/sbin/rabbitmq-server

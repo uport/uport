@@ -67,3 +67,5 @@ EXPOSE 8081
 ENV JENKINS_HOME /var/lib/jenkins
 
 CMD ["/usr/bin/java", "-jar", "/usr/share/jenkins/jenkins.war"]
+
+ADD Dockerfile .

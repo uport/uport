@@ -27,3 +27,5 @@ VOLUME /opt/sonatype-work
 
 EXPOSE 8081
 CMD [ "/opt/nexus/bin/nexus", "console" ]
+
+ADD Dockerfile .
