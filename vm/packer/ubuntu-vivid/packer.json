@@ -64,6 +64,7 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
+            "scripts/kernel.sh",
             "scripts/fstab.sh",
             "scripts/base-packages.sh",
             "../packer-install.sh",
