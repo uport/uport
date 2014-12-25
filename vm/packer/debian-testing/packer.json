@@ -67,7 +67,8 @@
             "scripts/openvswitch.sh",
             "scripts/virtualbox.sh",
             "scripts/vagrant.sh",
-            "scripts/docker.sh"
+            "scripts/docker.sh",
+            "scripts/java.sh"
           ]
         }
       }
