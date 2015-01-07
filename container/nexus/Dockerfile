@@ -3,8 +3,8 @@ FROM uport/ubuntu:latest
 MAINTAINER David Schmitz
 
 
-ENV NEXUS_BASE_VERSION 2.11.0
-ENV NEXUS_VERSION 2.11.0-02
+ENV NEXUS_BASE_VERSION 2.11.1
+ENV NEXUS_VERSION 2.11.1-01
 ENV NEXUS_UNZIP_P2 0.14.0
 
 RUN mkdir -p /opt/sonatype-nexus /opt/sonatype-work
