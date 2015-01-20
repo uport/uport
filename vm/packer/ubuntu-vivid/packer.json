@@ -7,7 +7,7 @@
     },
 
     "builders": [{
-        "headless": true,
+        "headless": false,
         "type": "virtualbox-iso",
         "guest_os_type": "Ubuntu_64",
               
@@ -68,10 +68,11 @@
             "scripts/fstab.sh",
             "scripts/base-packages.sh",
             "../packer-install.sh",
-            "scripts/openvswitch.sh",
             "scripts/virtualbox.sh",
             "scripts/vagrant.sh",
-            "scripts/docker.sh"
+            "scripts/docker.sh",
+            "scripts/socketplane.sh",
+            "scripts/java.sh"
           ]
         }
       }

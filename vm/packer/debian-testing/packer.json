@@ -7,7 +7,7 @@
     },
 
     "builders": [{
-        "headless": false,
+        "headless": true,
         "type": "virtualbox-iso",
         "guest_os_type": "Debian_64",
               
@@ -64,11 +64,11 @@
             "scripts/fstab.sh",
             "scripts/base-packages.sh",
             "../packer-install.sh",
-            "scripts/openvswitch.sh",
             "scripts/virtualbox.sh",
             "scripts/vagrant.sh",
             "scripts/docker.sh",
-            "scripts/java.sh"
+            "scripts/java.sh",
+            "scripts/socketplane.sh"
           ]
         }
       }

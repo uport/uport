@@ -14,16 +14,17 @@ RUN \
   apt-get update && \
   apt-get -y upgrade && \
   apt-get install -y systemd-services systemd-shim systemd libpam-systemd && \
-  apt-get install -y build-essential software-properties-common && \
-  apt-get install -y locate byobu curl git mercurial subversion htop man unzip vim wget mc zsync
+#  apt-get install -y build-essential software-properties-common && \
+  apt-get install -y locate curl htop man unzip vim wget mc
+#  apt-get install -y byobu git mercurial subversion zsync
 
-RUN apt-get update && apt-get install -y software-properties-common python-software-properties
-RUN add-apt-repository ppa:webupd8team/java -y
-RUN apt-get update
-RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+# RUN apt-get update && apt-get install -y software-properties-common python-software-properties
+# RUN add-apt-repository ppa:webupd8team/java -y
+# RUN apt-get update
+# RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 
-RUN apt-get install -y oracle-java8-installer
-RUN apt-get install -y oracle-java8-set-default
-RUN apt-get clean && apt-get update
+# RUN apt-get install -y oracle-java8-installer
+# RUN apt-get install -y oracle-java8-set-default
+#RUN apt-get clean && apt-get update
 
 ADD Dockerfile .
