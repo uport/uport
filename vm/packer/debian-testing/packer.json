@@ -49,12 +49,6 @@
        ]
     }],
 
-    "provisioners": [
-    {
-      "type": "file",
-      "source": "scripts/pipework.sh",
-      "destination": "/tmp/pipework.sh"
-    },
     {
       "type": "shell",
       "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'",
