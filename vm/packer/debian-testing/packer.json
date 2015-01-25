@@ -48,7 +48,7 @@
            "<enter>"
        ]
     }],
-
+    "provisioners": [
     {
       "type": "shell",
       "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'",
