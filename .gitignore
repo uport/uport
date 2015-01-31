@@ -11,4 +11,4 @@ syntax: glob
 *.zsync
 *.zs-old
 *.log
-
+generated

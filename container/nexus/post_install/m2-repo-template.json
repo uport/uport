@@ -1,0 +1,26 @@
+{  
+   "data":{  
+      "repoType":"proxy",
+      "id":"@REPO_ID@",
+      "name":"@REPO_ID@",
+      "browseable":true,
+      "indexable":true,
+      "notFoundCacheTTL":@REPO_TIMEOUT@,
+      "artifactMaxAge":@REPO_KEEP@,
+      "metadataMaxAge":@REPO_TIMEOUT@,
+      "itemMaxAge":@REPO_TIMEOUT@,
+      "repoPolicy":"@REPO_RELEASE@",
+      "provider":"maven2",
+      "providerRole":"org.sonatype.nexus.proxy.repository.Repository",
+      "downloadRemoteIndexes":true,
+      "autoBlockActive":true,
+      "fileTypeValidation":true,
+      "exposed":true,
+      "checksumPolicy":"WARN",
+      "remoteStorage":{  
+         "remoteStorageUrl":"@REPO_URL@",
+         "authentication":null,
+         "connectionSettings":null
+      }
+   }
+}
