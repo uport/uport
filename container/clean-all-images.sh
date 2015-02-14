@@ -1,4 +1,8 @@
 #! /bin/bash
 echo "clean all images..."
-docker rmi -f $(docker images -q -a)
+
+if [ ! -z $(docker images -q -a) ]
+then
+ docker rmi $(docker images -q -a)
+fi
 echo "finished cleaning all images"

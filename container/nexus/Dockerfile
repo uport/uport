@@ -27,11 +27,11 @@ VOLUME /opt/sonatype-work
 
 EXPOSE 8081
 ADD post_install /tmp/post_install
-RUN [ "/opt/nexus/bin/nexus", "start" ]
-RUN sleep 10
-RUN cd /tmp/post_install && ./create_repos.sh
+# RUN [ "/opt/nexus/bin/nexus", "start" ]
+# RUN sleep 10
+# RUN cd /tmp/post_install && ls -l && ./create_repos.sh
 
-RUN [ "/opt/nexus/bin/nexus", "stop" ]
+# RUN [ "/opt/nexus/bin/nexus", "stop" ]
 
 CMD [ "/opt/nexus/bin/nexus", "console" ]
 
