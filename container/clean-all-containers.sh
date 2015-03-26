@@ -10,7 +10,7 @@ else
   echo "no containers to stop"
 fi
 
-if [ ! -z $(docker ps -a -q) ]
+if [ ! -z $(docker ps -q) ]
 then
   docker rm -f $(docker ps -a -q)
 else

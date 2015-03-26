@@ -3,8 +3,8 @@ FROM uport/ubuntu:latest
 MAINTAINER David Schmitz
 
 
-ENV NEXUS_BASE_VERSION 2.11.1
-ENV NEXUS_VERSION 2.11.1-01
+ENV NEXUS_BASE_VERSION 2.11.2
+ENV NEXUS_VERSION $NEXUS_BASE_VERSION-04
 ENV NEXUS_UNZIP_P2 0.14.0
 
 RUN mkdir -p /opt/sonatype-nexus /opt/sonatype-work
@@ -26,12 +26,6 @@ RUN sed -i '/#RUN_AS_USER=/c\RUN_AS_USER=nexus' /opt/nexus/bin/nexus
 VOLUME /opt/sonatype-work
 
 EXPOSE 8081
-ADD post_install /tmp/post_install
-# RUN [ "/opt/nexus/bin/nexus", "start" ]
-# RUN sleep 10
-# RUN cd /tmp/post_install && ls -l && ./create_repos.sh
-
-# RUN [ "/opt/nexus/bin/nexus", "stop" ]
 
 CMD [ "/opt/nexus/bin/nexus", "console" ]
 
