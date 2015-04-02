@@ -4,10 +4,10 @@ MAINTAINER David Schmitz
 
 
 ENV NEXUS_BASE_VERSION 2.11.2
-ENV NEXUS_VERSION $NEXUS_BASE_VERSION-04
+ENV NEXUS_VERSION $NEXUS_BASE_VERSION-06
 ENV NEXUS_UNZIP_P2 0.14.0
 
-RUN mkdir -p /opt/sonatype-nexus /opt/sonatype-work
+RUN mkdir -p /opt/sonatype-work
 RUN wget -O /tmp/nexus-$NEXUS_BASE_VERSION-bundle.zip http://download.sonatype.com/nexus/oss/nexus-$NEXUS_BASE_VERSION-bundle.zip
 RUN wget -O /tmp/nexus-p2-repository-plugin-$NEXUS_VERSION-bundle.zip https://repository.sonatype.org/service/local/repositories/releases/content/org/sonatype/nexus/plugins/nexus-p2-repository-plugin/$NEXUS_VERSION/nexus-p2-repository-plugin-$NEXUS_VERSION-bundle.zip
 RUN wget -O /tmp/nexus-p2-bridge-plugin-$NEXUS_VERSION-bundle.zip https://repository.sonatype.org/service/local/repositories/releases/content/org/sonatype/nexus/plugins/nexus-p2-bridge-plugin/$NEXUS_VERSION/nexus-p2-bridge-plugin-$NEXUS_VERSION-bundle.zip
@@ -18,8 +18,9 @@ RUN ln -s /opt/nexus-$NEXUS_VERSION /opt/nexus
 RUN unzip /tmp/nexus-p2-repository-plugin-$NEXUS_VERSION-bundle.zip -d /opt/nexus/nexus/WEB-INF/plugin-repository
 RUN unzip /tmp/nexus-p2-bridge-plugin-$NEXUS_VERSION-bundle.zip -d /opt/nexus/nexus/WEB-INF/plugin-repository
 RUN unzip /tmp/unzip-repository-plugin-$NEXUS_UNZIP_P2-bundle.zip -d /opt/nexus/nexus/WEB-INF/plugin-repository
+ADD wrapper.conf /opt/nexus/bin/jsw/conf/wrapper.conf
 
-RUN useradd --user-group --system --home-dir /opt/sonatype-nexus nexus
+RUN useradd --user-group --system --home-dir /opt/sonatype-work nexus
 RUN chown -R nexus:nexus /opt/nexus /opt/nexus-$NEXUS_VERSION /opt/sonatype-work
 RUN sed -i '/#RUN_AS_USER=/c\RUN_AS_USER=nexus' /opt/nexus/bin/nexus
 
