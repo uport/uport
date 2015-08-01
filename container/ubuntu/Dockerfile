@@ -8,14 +8,13 @@ RUN locale-gen --no-purge en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 RUN update-locale LANG=en_US.UTF-8
 
-RUN \
-  sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
+RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   sed 's/main$/main universe/' -i /etc/apt/sources.list && \
   apt-get update && \
   apt-get -y upgrade && \
   apt-get install -y systemd-services systemd-shim systemd libpam-systemd && \
   apt-get install -y build-essential software-properties-common && \
-  apt-get install -y locate curl htop man unzip vim wget mc
+  apt-get install -y locate curl htop man unzip vim wget mc && \
   apt-get install -y byobu git mercurial subversion zsync
 
 RUN apt-get update && apt-get install -y software-properties-common python-software-properties
