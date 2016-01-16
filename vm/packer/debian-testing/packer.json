@@ -7,7 +7,7 @@
     },
 
     "builders": [{
-        "headless": true,
+        "headless": false,
         "type": "virtualbox-iso",
         "guest_os_type": "Debian_64",
               

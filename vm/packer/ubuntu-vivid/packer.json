@@ -7,7 +7,7 @@
     },
 
     "builders": [{
-        "headless": false,
+        "headless": true,
         "type": "virtualbox-iso",
         "guest_os_type": "Ubuntu_64",
               
