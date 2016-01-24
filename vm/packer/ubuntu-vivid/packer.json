@@ -29,7 +29,7 @@
         "disk_size": 65536,
         "hard_drive_interface": "sata",
                                   
-        "iso_url": "zsync/vivid-server-amd64.iso",
+        "iso_url": "zsync/ubuntu-15.04-server-amd64.iso",
         "iso_checksum_type": "none",
 
         "http_directory" : "http",
