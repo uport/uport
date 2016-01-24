@@ -2,8 +2,8 @@
     "variables": {
         "ssh_name": "vagrant",
         "ssh_pass": "vagrant",
-        "boxname":  "ubuntu_vivid_64",
-        "hostname": "ubuntu-vivid-vm"
+        "boxname":  "ubuntu_xenial_64",
+        "hostname": "ubuntu-xenial-vm"
     },
 
     "builders": [{
@@ -29,7 +29,7 @@
         "disk_size": 65536,
         "hard_drive_interface": "sata",
                                   
-        "iso_url": "zsync/ubuntu-15.04-server-amd64.iso",
+        "iso_url": "zsync/xenial-server-amd64.iso",
         "iso_checksum_type": "none",
 
         "http_directory" : "http",
@@ -42,7 +42,8 @@
         "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -P now",
         "boot_wait": "5s",
         "boot_command" : [
-            "<esc><esc><enter><wait>",
+            "<enter><wait>",
+            "<f6><esc>",
             "/install/vmlinuz noapic ",
             "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
     		"locale=en_US.UTF-8 kbd-chooser/method=de keymap=de bootkbd=de ",            
@@ -59,7 +60,6 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
-            "scripts/kernel.sh",
             "scripts/fstab.sh",
             "scripts/base-packages.sh",
             "scripts/virtualbox.sh",
