@@ -10,7 +10,7 @@
         "headless": false,
         "type": "virtualbox-iso",
         "guest_os_type": "Ubuntu_64",
-              
+
         "vboxmanage": [
             ["modifyvm", "{{.Name}}", "--vram", "32"],
             ["modifyvm", "{{.Name}}", "--memory", "8192"],
@@ -28,7 +28,7 @@
         "vm_name": "{{user `hostname`}}",
         "disk_size": 65536,
         "hard_drive_interface": "sata",
-                                  
+
         "iso_url": "zsync/ubuntu-15.10-server-amd64.iso",
         "iso_checksum_type": "none",
 
@@ -42,10 +42,11 @@
         "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -P now",
         "boot_wait": "5s",
         "boot_command" : [
-            "<esc><esc><enter><wait>",
+            "<enter><wait>",
+            "<f6><esc>",
             "/install/vmlinuz noapic ",
             "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg ",
-    		"locale=en_US.UTF-8 kbd-chooser/method=de keymap=de bootkbd=de ",            
+    		    "locale=en_US.UTF-8 kbd-chooser/method=de keymap=de bootkbd=de ",
             "hostname={{user `hostname`}} ",
             "fb=false debconf/frontend=noninteractive ",
             "initrd=/install/initrd.gz -- <enter>"
@@ -81,4 +82,3 @@
     }
     ]
 }
-
