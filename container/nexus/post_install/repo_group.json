@@ -1,0 +1,26 @@
+{  
+   "data":{  
+      "id":"p2.public",
+      "name":"p2.public",
+      "format":"p2",
+      "exposed":true,
+      "provider":"p2-composite",
+      "repositories":[  
+         {  
+            "id":"p2.ext.eclipse.luna"
+         },
+         {  
+            "id":"p2.ext.eclipse.orbit.luna.sr2"
+         },
+         {  
+            "id":"p2.ext.udig.gxt.toolbox"
+         },
+         {  
+            "id":"p2.ext.udig.jai"
+         },
+         {  
+            "id":"p2.ext.udig.ows3"
+         },
+      ]
+   }
+}

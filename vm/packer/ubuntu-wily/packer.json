@@ -2,12 +2,12 @@
     "variables": {
         "ssh_name": "vagrant",
         "ssh_pass": "vagrant",
-        "boxname":  "ubuntu_vivid_64",
-        "hostname": "ubuntu-vivid-vm"
+        "boxname":  "ubuntu_wily_64",
+        "hostname": "ubuntu-wily-vm"
     },
 
     "builders": [{
-        "headless": true,
+        "headless": false,
         "type": "virtualbox-iso",
         "guest_os_type": "Ubuntu_64",
               
@@ -29,7 +29,7 @@
         "disk_size": 65536,
         "hard_drive_interface": "sata",
                                   
-        "iso_url": "zsync/ubuntu-15.04-server-amd64.iso",
+        "iso_url": "zsync/ubuntu-15.10-server-amd64.iso",
         "iso_checksum_type": "none",
 
         "http_directory" : "http",
@@ -59,7 +59,6 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
-            "scripts/kernel.sh",
             "scripts/fstab.sh",
             "scripts/base-packages.sh",
             "scripts/virtualbox.sh",
