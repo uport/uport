@@ -1,4 +1,4 @@
-FROM ubuntu:15.04
+FROM ubuntu:16.04
 MAINTAINER David Schmitz
 
 # Install.
@@ -12,12 +12,10 @@ RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list && \
   sed 's/main$/main universe/' -i /etc/apt/sources.list && \
   apt-get update && \
   apt-get -y upgrade && \
-  apt-get install -y systemd-services systemd-shim systemd libpam-systemd && \
-  apt-get install -y build-essential software-properties-common && \
-  apt-get install -y locate curl htop man unzip vim wget mc && \
-  apt-get install -y byobu git mercurial subversion zsync
+  apt-get install -y build-essential && \
+  apt-get install -y software-properties-common && \
+  apt-get install -y byobu curl git htop man unzip vim wget 
 
-RUN apt-get update && apt-get install -y software-properties-common python-software-properties
 RUN add-apt-repository ppa:webupd8team/java -y
 RUN apt-get update
 RUN echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections

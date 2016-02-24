@@ -5,7 +5,7 @@
 # and then you can run containers with:
 #   docker run -t -i --rm -e http_proxy http://dockerhost:3142/ debian bash
 #
-FROM        ubuntu:15.04
+FROM        ubuntu:16.04
 MAINTAINER  David Schmitz
 
 VOLUME      ["/var/cache/apt-cacher-ng"]
