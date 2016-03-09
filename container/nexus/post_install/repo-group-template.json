@@ -1,0 +1,12 @@
+{  
+   "data":{  
+      "id":"@REPO_GROUP_ID@",
+      "name":"@REPO_GROUP_ID@",
+      "format":"p2",
+      "exposed":true,
+      "provider":"p2-composite",
+      "repositories":[  
+        @REPO_GROUP_REPOS@
+      ]
+   }
+}
